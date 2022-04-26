@@ -1,11 +1,11 @@
 # platform-science
 
-Intructions for setting projects
--Clone project using either SSH or HTPPS
--Make sure to configure your IDE run configurations and add com.platformscience.Main as Main class
--Use Java11
-
-Instructions for using application
--Run application
--Add number of street names and drivers
--Input the street names then click Enter until the information is added
+Intructions for setting projects<br />
+-Clone project using either SSH or HTPPS<br />
+-Make sure to configure your IDE run configurations and add com.platformscience.Main as Main class<br />
+-Use Java11<br />
+<br />
+Instructions for using application<br />
+-Run application<br />
+-Add number of street names and drivers<br />
+-Input the street names then click Enter until the information is added<br />
