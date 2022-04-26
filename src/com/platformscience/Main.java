@@ -2,6 +2,9 @@ package com.platformscience;
 
 import java.util.*;
 
+/**
+ * @author Eduardo Sanabia
+ */
 public class Main {
 
     static List<Character> vowels = Arrays.asList('a','e','i','o','u','A','E','I','O','U');
@@ -17,16 +20,23 @@ public class Main {
 
         System.out.println("Enter " + fileSize + " addresses: ");
         getInput(addresses, fileSize, sc);
+
         System.out.println("Enter " + fileSize + " drivers: ");
         getInput(drivers, fileSize, sc);
 
+        double ssFinalValue = getMaxSsByDriver(addresses, drivers);
+        System.out.println("Final SS: " + ssFinalValue);
+    }
+
+    static double getMaxSsByDriver(List<String> addresses, List<String> drivers) {
         double ssFinalValue = 0;
         for(String driver: drivers) {
+            Driver currentDriver = new Driver(driver);
             double ssValue = 0;
             String addressId = null;
             for(String address: addresses) {
                 if(address.length() % 2 == 0) {
-                    double vowelsCount = getVowelsCount(driver);
+                    double vowelsCount = currentDriver.getVowels();
                     if (address.length() == driver.length()) {
                         vowelsCount = vowelsCount * 1.5;
                     }
@@ -36,7 +46,7 @@ public class Main {
                     }
                 }
                 else {
-                    double consonantCount = getConsonantCount(driver);
+                    double consonantCount = currentDriver.getConsonants();
                     if (address.length() == driver.length()) {
                         consonantCount = consonantCount * 1.5;
                     }
@@ -50,7 +60,7 @@ public class Main {
             addresses.remove(addressId);
             ssFinalValue += ssValue;
         }
-        System.out.println("Final SS" + ssFinalValue);
+        return ssFinalValue;
     }
 
     static void getInput(List<String> inputValue, int fileSize, Scanner sc) {
@@ -59,29 +69,5 @@ public class Main {
             inputValue.add(address);
         }
     }
-
-    static double getVowelsCount(String driverName) {
-        double vowelsCount = 0;
-        char[] driverNameArr = driverName.toCharArray();
-        for (char c : driverNameArr) {
-            if (vowels.contains(c)) {
-                vowelsCount++;
-            }
-        }
-        vowelsCount = vowelsCount * 1.5;
-        System.out.println(vowelsCount);
-        return vowelsCount;
-    }
-
-    static double getConsonantCount(String driverName ) {
-        double consonantsCount = 0;
-        char[] driverNameArr = driverName.toCharArray();
-        for (char c : driverNameArr) {
-            if (!vowels.contains(c) && c != ' ') {
-                consonantsCount++;
-            }
-        }
-        System.out.println(consonantsCount);
-        return consonantsCount;
-    }
 }
+
