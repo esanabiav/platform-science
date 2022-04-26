@@ -1,6 +1,6 @@
 # platform-science
 
-Intructions for setting projects using IntelliJ<br />
+## Intructions for setting projects using IntelliJ<br />
 -Select the Clone button in repository<br />
 -Copy the clone command<br />
 -From your terminal, move to the local directory where you want to clone the repository<br />
@@ -14,7 +14,7 @@ $ git clone {clone command copied}<br /><br />
 -Select Java11 and add com.platformscience.Main as Main class<br />
 <br />
 
-Instructions for using application<br />
+## Instructions for using application<br />
 -Click on Run icon<br />
 -Add number of street names and drivers<br />
 -Input the street names then click Enter until the information is added<br />
