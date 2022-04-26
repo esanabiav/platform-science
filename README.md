@@ -6,8 +6,7 @@ Intructions for setting projects using IntelliJ<br />
 -From your terminal, move to the local directory where you want to clone the repository<br />
 -Paste the below command copied from repository<br />
 <br />
-$ git clone {clone command copied}
-<br />
+$ git clone {clone command copied}<br />
 -Make sure to configure your IDE run configurations and add com.platformscience.Main as Main class<br />
 -Open the Run/Debug Configuration window<br />
 -Click the Add New Configuration icon <br />
