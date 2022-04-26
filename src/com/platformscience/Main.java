@@ -9,10 +9,9 @@ public class Main {
     public static void main(String[] args) {
         List<String> addresses = new ArrayList<>();
         List<String> drivers = new ArrayList<>();
-        Map<String, List<Double>> ssTotals = new HashMap<String, List<Double>>();
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Number of street addresses: ");
+        System.out.print("Number of street names and drivers: ");
         int fileSize = sc.nextInt();
         sc.nextLine();
 
@@ -21,18 +20,10 @@ public class Main {
         System.out.println("Enter " + fileSize + " drivers: ");
         getInput(drivers, fileSize, sc);
 
-        //          a  e  c
-        // jose    [5  5  6]
-        // sanabia [3  3  6]
-        // muñoz   [7  7  9]
-        //
-
-
         double ssFinalValue = 0;
         for(String driver: drivers) {
             double ssValue = 0;
             String addressId = null;
-
             for(String address: addresses) {
                 if(address.length() % 2 == 0) {
                     double vowelsCount = getVowelsCount(driver);
@@ -55,10 +46,11 @@ public class Main {
                     }
                 }
             }
+            System.out.println(driver + " - " + addressId);
             addresses.remove(addressId);
             ssFinalValue += ssValue;
         }
-        System.out.println("Final " + ssFinalValue);
+        System.out.println("Final SS" + ssFinalValue);
     }
 
     static void getInput(List<String> inputValue, int fileSize, Scanner sc) {
@@ -76,7 +68,6 @@ public class Main {
                 vowelsCount++;
             }
         }
-
         vowelsCount = vowelsCount * 1.5;
         System.out.println(vowelsCount);
         return vowelsCount;
