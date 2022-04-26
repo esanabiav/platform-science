@@ -1,6 +1,6 @@
 # platform-science
 
-## Intructions for setting projects using IntelliJ<br />
+## Intructions for setting projects using IntelliJ<br />
 -Select the Clone button in repository<br />
 -Copy the clone command<br />
 -From your terminal, move to the local directory where you want to clone the repository<br />
