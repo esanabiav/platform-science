@@ -63,8 +63,8 @@ public class Main {
     static double getVowelsCount(String driverName) {
         double vowelsCount = 0;
         char[] driverNameArr = driverName.toCharArray();
-        for(int i=0; i<driverNameArr.length; i++){
-            if(vowels.contains(driverNameArr[i])) {
+        for (char c : driverNameArr) {
+            if (vowels.contains(c)) {
                 vowelsCount++;
             }
         }
@@ -76,8 +76,8 @@ public class Main {
     static double getConsonantCount(String driverName ) {
         double consonantsCount = 0;
         char[] driverNameArr = driverName.toCharArray();
-        for(int i=0; i<driverNameArr.length; i++){
-            if(!vowels.contains(driverNameArr[i]) && driverNameArr[i] != ' ') {
+        for (char c : driverNameArr) {
+            if (!vowels.contains(c) && c != ' ') {
                 consonantsCount++;
             }
         }
